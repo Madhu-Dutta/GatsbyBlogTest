@@ -12,10 +12,11 @@ const styles = {
   };
 
 const SwiperPage = () => (
-<Layout pageTitle="DGHA Swipe">
+<Layout>
   <SEO title="swiper"  keywords={["gatsby", "application", "react"]}/>
-  
+
   <SwipeableViews enableMouseEvents>
+     
   <div style={Object.assign({}, styles.slide)}>
           <h1>The Rights of Dog Guides and Their Handlers</h1>
           <hr />

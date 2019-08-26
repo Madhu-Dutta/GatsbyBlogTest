@@ -7,11 +7,20 @@ import {Badge, Card, CardBody, CardSubtitle} from 'reactstrap'
 import Img from 'gatsby-image'
 import {slugify} from '../util/utilityFunctions'
 import authors from '../util/authors'
+import {DiscussionEmbed} from 'disqus-react'
 
-
-const SinglePost = ({data}) => {
+const SinglePost = ({data, pageContext}) => {
     const post = data.markdownRemark.frontmatter
     const author = authors.find(x => x.name === post.author)
+
+    const baseUrl = "https://xenodochial-ritchie-a2ac54.netlify.com/" ;
+    const disqShortname = "gatsbyblog-netlify-com";
+
+    const disqsConfig = {
+        identifier: data.markdownRemark.id,
+        title: post.title,
+        url: baseUrl + pageContext.slug 
+    }
 
     return (
         <Layout pageTitle={post.title} postAuthor={author} authorImageFluid={data.file.childImageSharp.fluid}>
@@ -35,7 +44,8 @@ const SinglePost = ({data}) => {
                             ))}
                         </ul>
                     </CardBody>
-                </Card>     
+                </Card> 
+                <DiscussionEmbed shortname={disqShortname} config={disqShortname} />    
         </Layout>
     )
 }
