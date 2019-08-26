@@ -45,6 +45,9 @@ class Header extends React.Component{
               <NavItem>
                 <NavLink href="/contact/">Contact</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink href="/swiper/">DGHA Swiper</NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
       </div>
