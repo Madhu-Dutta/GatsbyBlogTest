@@ -45,6 +45,65 @@ const SinglePost = ({data, pageContext}) => {
                         </ul>
                     </CardBody>
                 </Card> 
+                <h3 className="text-center">Share this Post</h3>
+                <div className="text-center social-share-links">
+                    <ul>
+                        <li>
+                            <a href={'https://www.facebook.com/sharer.php?u=' +
+                             baseUrl +
+                              pageContext.slug
+                            }
+                            className="facebook"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                              >
+                                <i className="fab fa-facebook-f fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href={'https://www.twitter.com/sharer.php?url=' +
+                             baseUrl +
+                              pageContext.slug + '&text=' + post.title + '&'
+                            }
+                            className="twitter"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                              >
+                                <i className="fab fa-twitter fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href={'https://www.google.com/sharer.php?url=' +
+                             baseUrl +
+                              pageContext.slug 
+                            }
+                            className="google"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                              >
+                                <i className="fab fa-google fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href={'https://www.linkedin.com/sharer.php?url=' +
+                             baseUrl +
+                              pageContext.slug 
+                            }
+                            className="linkedin"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                              >
+                                <i className="fab fa-linkedin fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                 <DiscussionEmbed shortname={disqShortname} config={disqShortname} />    
         </Layout>
     )
